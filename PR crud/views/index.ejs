@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+#head{
+    height: 60px;
+    
+}
+td{
+    background-color: brown;
+    color: antiquewhite;
+    padding: 10px;
+   text-transform: capitalize;
+}
+</style>
+<body style="background-color: rgb(251, 240, 226);">
+    <h1 style="text-transform: capitalize; color: brown;">to do list</h1>
+    <form action="/addData" method="post" style="margin-bottom: 50px;">
+        
+        <input style="background-color: rgb(249, 241, 230); color: brown; border: 2px solid;" type="text" placeholder="enter Awaiting Action" name="awaiting"/>
+        <input style="background-color: rgb(249, 241, 230); color: brown; border: 2px solid;" type="text" placeholder="enter In Progress work" name="Progress"/>
+        <input style="background-color: rgb(249, 241, 230); color: brown; border: 2px solid;" type="text" placeholder="enter Completed Task" name="completed"/>
+        <button type="submit" style="height: 50px; width: 100px; background-color: brown; color: antiquewhite; font-size: 25px;">submit</button>
+    </form>
+
+    <table border="2" style="width: 80%;">
+        <thead id="head">
+            <tr>
+                <td>id</td>
+                <td>Awaiting Action</td>
+                <td>In Progress</td>
+                <td>Completed Tasks </td>
+                <td colspan="2">Action</td>
+            </tr>
+            <% works.map((e,i)=>{%>
+                <tr>
+                    <td><%=e.id%></td>
+                    <td><%=e.awaiting%></td>
+                    <td><%=e.progress%></td>
+                    <td><%=e.completed %></td>
+                    <td><button><a style="color: brown; text-decoration: none;" href="/editData/<%=e.id%>">edit</a></button></td>
+                    <td><button><a style="color: brown; text-decoration: none;" href="/deleteData?id=<%=e.id%>">delete</a></button></td>
+                </tr>
+               <%})%>
+        
+        </thead>
+     
+    </table>
+</body>
+</html>

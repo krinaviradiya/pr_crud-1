@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   
+<form action="/updateData" method="post">
+    <input style="background-color: rgb(249, 241, 230); color: brown; border: 2px solid;" type="text" 
+    value="<%=singleData.id%>" 
+    name="id" 
+    hidden 
+    />
+    <input
+     type="text" 
+     style="background-color: rgb(249, 241, 230); color: brown; border: 2px solid;"
+     value="<%=singleData.awaiting%>"
+      placeholder="enter Awaiting Action" 
+      name="awaiting"
+    />
+    <input 
+     type="text"
+     value="<%=singleData.progress%>" 
+     style="background-color: rgb(249, 241, 230); color: brown; border: 2px solid;"
+     placeholder="enter In Progress work" 
+     name="progress"
+     />
+     <input 
+     type="text"
+     style="background-color: rgb(249, 241, 230); color: brown; border: 2px solid;"
+     value="<%=singleData.completed%>" 
+     placeholder="enter Completed Task" 
+     name="completed"
+     />
+    <button type="submit" style="height: 50px; width: 100px; background-color: brown; color: antiquewhite; font-size: 25px;">update</button>
+</form>
+   
+
+</body>
+</html>
